@@ -1,0 +1,35 @@
+body {
+    color: #444;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif, Helvetica, Arial, sans-serif;
+}
+
+/*----- HEADER ------*/
+.header {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.header li {
+    display: inline-block;
+}
+
+.header a {
+    color: #444;
+}
+
+/*----- FOOTER -----*/
+.footer {
+    border-top: 1px dashed #444;
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+/*----- TILE -----*/
+.tile {
+    padding: 0;
+}
+
+/*----- PIECE -----*/
+.piece {
+    margin: 0 auto;
+    width: 600px;
+}

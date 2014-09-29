@@ -31,3 +31,8 @@ Route::get('/art/{name}', function($name)
 
     return View::make('piece')->with('piece', $piece);
 });
+
+Route::get('/contact', function()
+{
+    return View::make('contact');
+});

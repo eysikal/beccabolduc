@@ -3,7 +3,7 @@
     <div class="col-xs-3 logo">
         <a href="/"><img src="/assets/images/beccabolduc-logo.svg" alt="Becca Bolduc logo"></a>
     </div>
-    <div class="col-xs-5 col-xs-offset-4 text-right">
+    <div class="col-xs-9 text-right">
         <ul class="list-unstyled">
             <li><a href="/">HOME</a> | </li>
             <li><a href="/art/traditional">TRADITIONAL</a> | </li>

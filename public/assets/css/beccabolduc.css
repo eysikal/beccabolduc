@@ -21,8 +21,14 @@ body {
 
 /*----- TILE -----*/
 .tile {  padding: 0; }
-.tile img { transition: all 0.3s ease; }
-.tile:hover img { transform: scale(1.05); }
+.tile img {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.tile:hover img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
 
 /*----- PIECE -----*/
 .piece {

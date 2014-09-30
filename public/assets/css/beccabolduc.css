@@ -8,25 +8,21 @@ body {
     margin-top: 20px;
     margin-bottom: 50px;
 }
-.header li {
-    display: inline-block;
-}
+.header li { display: inline-block; }
 
-.header a {
-    color: #444;
-}
+.header a { color: #444; }
 
 /*----- FOOTER -----*/
 .footer {
-    border-top: 1px dashed #444;
+    border-top: 1px solid #aaa;
     margin-top: 50px;
     padding-top: 10px;
 }
 
 /*----- TILE -----*/
-.tile {
-    padding: 0;
-}
+.tile {  padding: 0; }
+.tile img { transition: all 0.3s ease; }
+.tile:hover img { transform: scale(1.05); }
 
 /*----- PIECE -----*/
 .piece {

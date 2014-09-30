@@ -35,3 +35,19 @@ body {
     margin: 0 auto;
     width: 600px;
 }
+
+/*----- SOCIAL ------*/
+.social { padding-top: 20px; }
+.social li {
+    display: inline-block;
+    padding: 0 15px;
+}
+.social img {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 75px;
+}
+.social img:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}

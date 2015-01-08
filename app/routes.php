@@ -8,7 +8,7 @@ Route::get('/', function()
 	return View::make('home')->with('pieces', $pieces);
 });
 
-Route::get('/art/traditional', function()
+Route::get('art/traditional', function()
 {
     $art = new Art();
     $pieces = $art->getTraditional();
@@ -16,7 +16,7 @@ Route::get('/art/traditional', function()
     return View::make('home')->with('pieces', $pieces);
 });
 
-Route::get('/art/digital', function()
+Route::get('art/digital', function()
 {
     $art = new Art();
     $pieces = $art->getDigital();
@@ -24,7 +24,7 @@ Route::get('/art/digital', function()
     return View::make('home')->with('pieces', $pieces);
 });
 
-Route::get('/art/{name}', function($name)
+Route::get('art/{name}', function($name)
 {
     $art = new Art();
     $piece = $art->getPiece($name);
@@ -32,7 +32,12 @@ Route::get('/art/{name}', function($name)
     return View::make('piece')->with('piece', $piece);
 });
 
-Route::get('/contact', function()
+Route::get('contact', function()
 {
     return View::make('contact');
 });
+
+Route::get('admin', function()
+{
+   return 'test';
+})->before('auth.basic');

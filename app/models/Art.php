@@ -29,4 +29,22 @@ class Art {
             ->select('*')
             ->get();
     }
+
+    public function saveArt($name, $image, $tag)
+    {
+        $id = DB::table('art')
+            ->insertGetId(
+                array(
+                    'name' => $name,
+                    'image' => $image
+                ));
+
+        DB::table('art_tag')
+            ->insert(
+                array(
+                    'art_id' => $id,
+                    'tag_id' => $tag
+                )
+            );
+    }
 }

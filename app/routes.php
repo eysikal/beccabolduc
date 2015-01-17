@@ -37,7 +37,40 @@ Route::get('contact', function()
     return View::make('contact');
 });
 
-Route::get('admin', function()
+Route::get('admin', array('before' => 'auth.basic', function()
 {
-   return 'test';
-})->before('auth.basic');
+   return View::make('admin');
+}));
+
+Route::post('admin/post-art', array('before' => 'auth.basic', function()
+{
+    $name = trim(Input::get('name'));
+    $image_name = explode('-', $name)[0];
+
+    $full = Input::file('full');
+    $ext = strtolower($full->getClientOriginalExtension());
+    $full_image_name = $image_name . '.' . $ext;
+
+    $full->move(public_path() . '/assets/images/art/full/', $full_image_name);
+
+    $tile = Input::file('tile');
+    $ext = strtolower($tile->getClientOriginalExtension());
+    $tile_image_name = $image_name . '-tile' . '.' . $ext;
+
+    $tile->move(public_path() . '/assets/images/art/tile/', $tile_image_name);
+
+    $medium = Input::get('medium');
+
+    $art = new Art();
+    $art->saveArt($name, $image_name, $medium);
+
+    $art_url = url('art/' . $name, $parameters = array(), $secure = null);
+
+    $view_vars = array(
+        'art_name' => $name,
+        'art_url' => $art_url
+    );
+
+    return View:: make('saved', $view_vars);
+
+}));
